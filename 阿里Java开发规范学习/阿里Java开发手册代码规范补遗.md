@@ -121,7 +121,7 @@ A.YES.equals(B.YES)，预期是 true，但实际返回为 false，导致线上�
 
 标准如下：
 
-![SpaceStandard](C:\Users\hui\Desktop\SpaceStandard.png)
+![SpaceStandard](https://github.com/Mccreeeee/For-Dreams/blob/master/阿里Java开发规范学习/SpaceStandard.png)
 
 #### 4、【强制】注释的双斜线与注释内容之间有且仅有一个空格 
 
@@ -135,7 +135,7 @@ A.YES.equals(B.YES)，预期是 true，但实际返回为 false，导致线上�
 4） 方法调用中的多个参数需要换行时， 在逗号后进行。
 5） 在括号前不要换行，见反例。 
 
-![NewlineStandard](C:\Users\hui\Desktop\NewlineStandard.png)
+![NewlineStandard](https://github.com/Mccreeeee/For-Dreams/blob/master/阿里Java开发规范学习/NewlineStandard.png)
 
 #### 6、【强制】IDE 的 text file encoding 设置为 UTF-8; IDE 中，文件的换行符使用 Unix 格式，不要使用 Windows 格式
 
@@ -234,7 +234,7 @@ A.YES.equals(B.YES)，预期是 true，但实际返回为 false，导致线上�
 
 #### 7、不要在 foreach 循环里进行元素的 remove/add 操作。 remove 元素请使用 Iterator方式，如果并发操作，需要对 Iterator 对象<u>加锁</u> 
 
-![IteratorDefinition](C:\Users\hui\Desktop\IteratorDefinition.png)![Iterator](C:\Users\hui\Desktop\Iterator.png)
+![IteratorDefinition](https://github.com/Mccreeeee/For-Dreams/blob/master/阿里Java开发规范学习/IteratorDefinition.png)![Iterator](https://github.com/Mccreeeee/For-Dreams/blob/master/阿里Java开发规范学习/Iterator.png)
 
 原因：第一次不报错是因为”1”被移除后，it的corsor = 1，list的size = 1，it的hasNext 方法{return corsor != size}返回false，直接结束了循环，没有进入到next方法内部执行checkForComodification方法，而第二次 移除 “2”以后 it的corsor = 2，list的size = 1，it的hasNext 方法 {return corsor != size}返回true。 继续执行了 it的next方法进入到next方法内部执行checkForComodification方法发现modCount和expCount不同，抛异常**java.util.ConcurrentModificationException**
 
@@ -250,7 +250,7 @@ A.YES.equals(B.YES)，预期是 true，但实际返回为 false，导致线上�
 
 #### 10、【推荐】高度注意 Map 类集合 K/V 能不能存储 null 值的情况，如下表格： 
 
-![Map&null](C:\Users\hui\Desktop\Map&null.png)
+![Map&null](https://github.com/Mccreeeee/For-Dreams/blob/master/阿里Java开发规范学习/Map&null.png)
 
 #### 11、【参考】利用 Set 元素唯一的特性，可以快速对一个集合进行<u>去重</u>操作，避免使用 List 的contains 方法进行遍历、对比、 去重操作
 
@@ -282,7 +282,7 @@ public ThreadPoolExecutor(int corePoolSize,
 
 #### 4、【强制】 SimpleDateFormat 是线程不安全的类，一般不要定义为 static 变量，如果定义为static，必须加锁，或者使用 DateUtils 工具类
 
-![SimpleDateFormat](C:\Users\hui\Desktop\SimpleDateFormat.png)
+![SimpleDateFormat](https://github.com/Mccreeeee/For-Dreams/blob/master/阿里Java开发规范学习/SimpleDateFormat.png)
 
 <font color = brown>说明</font>： 如果是 JDK8 的应用，可以使用 Instant 代替 Date， LocalDateTime 代替 Calendar，DateTimeFormatter 代替 SimpleDateFormat，官方给出的解释： simple beautiful strong immutable thread-safe 
 
