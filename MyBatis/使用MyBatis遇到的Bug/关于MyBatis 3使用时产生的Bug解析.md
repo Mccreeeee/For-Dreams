@@ -4,13 +4,13 @@
 
 遇到的问题：pojo类中存在setter方法和有参构造函数，不存在无参构造函数，其中有参构造函数的参数顺序与数据库列名顺序不同
 
-![user](C:\Users\huqingyu18\Desktop\user.png)
+![user](https://github.com/Mccreeeee/For-Dreams/blob/master/MyBatis/%E4%BD%BF%E7%94%A8MyBatis%E9%81%87%E5%88%B0%E7%9A%84Bug/user.png)
 
-![userdb](C:\Users\huqingyu18\Desktop\userdb.png)
+![userdb](https://github.com/Mccreeeee/For-Dreams/blob/master/MyBatis/%E4%BD%BF%E7%94%A8MyBatis%E9%81%87%E5%88%B0%E7%9A%84Bug/userdb.png)
 
 当getuser的时候发现报错，无法正常映射，于是深入剖析，发现关键点在createResultObject函数，如下图：
 
-![createResultObject](C:\Users\huqingyu18\Desktop\createResultObject.png)
+![createResultObject](https://github.com/Mccreeeee/For-Dreams/blob/master/MyBatis/%E4%BD%BF%E7%94%A8MyBatis%E9%81%87%E5%88%B0%E7%9A%84Bug/createResultObject.png)
 
 发现当不存在默认构造器的时候将会调用createByConstructorSignature函数：
 
